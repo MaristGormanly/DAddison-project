@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MaristGormanly/DAddison-project/issues"
   },
-  "homepage": "https://github.com/MaristGormanly/DAddison-project#readme"
+  "homepage": "https://github.com/MaristGormanly/DAddison-project#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
