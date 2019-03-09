@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+  background-image: url("/images/splash.jpg");
+  color: black;
+}
+
+#title {
+  margin: 13%;
+  font-size: 600%;
+}
+
+p {
+  font-size: 240%;
+}
