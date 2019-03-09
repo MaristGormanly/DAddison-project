@@ -12,6 +12,7 @@ ol{
   font-size: 200%;
   margin:40%;
   margin-top: 0;
+  margin-bottom: 5%;
 }
 input {
   font-size:100%;
@@ -23,5 +24,14 @@ input {
 input:hover {
 color: lightblue;
 }
-
+h1 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 5%;
+}
+#choice {
+  color: tan;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
 }
