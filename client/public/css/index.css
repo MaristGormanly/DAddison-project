@@ -9,6 +9,8 @@ body {
   font-size: 600%;
 }
 
-p {
+#fadetext {
+  opacity: 1;
+  transition: 1s opacity;
   font-size: 240%;
 }
