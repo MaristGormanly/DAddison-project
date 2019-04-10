@@ -1,7 +1,7 @@
-var pace = require(./pace);
-var pace = require(./weather);
-var pace = require(./terrain);
-function pace(){
+var pace = require("./pace");
+var weather = require("./weather");
+var terrain = require("./terrain");
+function gameData(){
   this.playerNames = [];
   this.playerStatus = [true,true,true,true,true];
   this.playerProfession = "";
