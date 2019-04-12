@@ -15,6 +15,7 @@ function gameData(){
   this.currentTerrain = terrain.getTerrain("Hill");
   this.messages= "";
 }
+
 exports.healthCheck = function(){
   if(groupHealth>=80){
     return "good";
@@ -32,9 +33,6 @@ exports.healthCheck = function(){
       }
     }
     return response;
-    }
-  }
-    return "poor";
   }
   else if (groupHealth>0){
     var response = "very poor";
@@ -53,4 +51,8 @@ exports.healthCheck = function(){
     }
     return "everyone in party is eliminated, you lose"
   }
+}
+
+exports.getGameData = function(){
+  return new gameData()
 }

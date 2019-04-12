@@ -56,7 +56,7 @@ exports.getWeather = function (weather){
     return weatherList[10];
   }
 }
-exports.getRandomWeather = funtion (weather){
+exports.getRandomWeather = function (weather){
   var randomNum = Math.floor(Math.random()*(100 - 1 + 1)) + 1;
   if (randomNum < 10){
     return weatherList[0];

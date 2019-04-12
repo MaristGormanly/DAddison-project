@@ -20,7 +20,7 @@ exports.saveStartMonth  = function(req, res) {
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().startMonth);
 }
-exports.saveplayerMoney  = function(req, res) {
+exports.savePlayerMoney  = function(req, res) {
   gameController.getGameData().playerMoney = req.body.money;
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().playerMoney);
@@ -38,11 +38,11 @@ exports.getPlayerProfession  = function(req, res) {
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().playerProfession);
 }
-exports.getplayerMoney  = function(req, res) {
+exports.getPlayerMoney  = function(req, res) {
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().playerMoney);
 }
-exports.updateplayerMoney  = function(req, res) {
+exports.updatePlayerMoney  = function(req, res) {
   gameController.getGameData().playerMoney = req.body.money;
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().playerMoney);
@@ -55,12 +55,12 @@ exports.getStartMonth  = function(req, res) {
 exports.getCurrentPace  = function(req, res) {
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().currentPace);
-
+}
 exports.updateCurrentPace  = function(req, res) {
   gameController.getGameData().currentPace = req.body.pace;
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().currentPace);
-
+}
 
 /*exports.changePlayerName  = function(req, res) {
   res.setHeader('Content-Type', 'application/json');

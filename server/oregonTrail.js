@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express()
+const app = express();
 app.use(express.static('client/public'));
 const port = 1337
 
@@ -23,9 +23,12 @@ app.get('/trail.html', function (req, res) { res.sendFile('trail.html',
 {root: './client/views' })
 })
 
-var gameController = require("../Controllers/gameController.js");
-var setupController = require("../Controllers/setupController.js");
-var topTenController = require("../Controllers/topTenController.js");
+var gameController = require("./Controllers/gameController.js");
+var setupController = require("./Controllers/setupController.js");
+var topTenController = require("./Controllers/topTenController.js");
+
+app.route('/api/gameData')
+  .get(gameController.sendGameData);
 
 app.route('/api/setup/player')
   .get(setupController.getAllPlayerNames)
@@ -39,48 +42,48 @@ app.route('/api/setup/playerProfession')
   .post(setupController.saveProfession);
 
 app.route('/api/setup/playerMoney')
-  .get(setupController.getPlayerMoney)
-  .post(setupController.saveplayerMoney)
-  .patch(setupController.updateplayerMoney);
+  //.get(setupController.getPlayerMoney)   //was returning money amount as a status code
+  .post(setupController.savePlayerMoney)
+  .patch(setupController.updatePlayerMoney);
 
-app.route('/api/setup/startMonth)
+app.route('/api/setup/startMonth')
   .get(setupController.getStartMonth)
   .post(setupController.saveStartMonth);
 
-app.route('/api/gameData/mileTravled)
-  .get(gameController.getMilesTraveled)
+app.route('/api/gameData/mileTravled')
+  //.get(gameController.getMilesTraveled)
   .post(gameController.saveMilesTraveled)
   .patch(gameController.updateMilesTraveled);
 
-app.route('/api/gameData/groupHealth)
-  .get(gameController.getGroupHealth)
+app.route('/api/gameData/groupHealth')
+  //.get(gameController.getGroupHealth)
   .post(gameController.saveGroupHealth)
   .patch(gameController.updateGroupHealth);
 
-app.route('/api/setup/currentPace)
+app.route('/api/setup/currentPace')
   .get(setupController.getCurrentPace)
   .post(setupController.saveCurrentPace)
   .patch(setupController.updateCurrentPace);
 
-app.route('/api/gameData/daysOnTrail)
-  .get(gameController.getDaysOnTrail)
+app.route('/api/gameData/daysOnTrail')
+  //.get(gameController.getDaysOnTrail)
   .post(gameController.saveDaysOnTrail)
-  .patch(setupController.updateDaysOnTrail);
+  .patch(gameController.updateDaysOnTrail);
 
-app.route('/api/gameData/currentWeather)
+app.route('/api/gameData/currentWeather')
   .get(gameController.getCurrentWeather)
-  .post(gameController.saveCurrentWeather);
-  .patch(setupController.updateCurrentWeather);
+  .post(gameController.saveCurrentWeather)
+  .patch(gameController.updateCurrentWeather);
 
-app.route('/api/gameData/currentTerrain)
+app.route('/api/gameData/currentTerrain')
   .get(gameController.getCurrentTerrain)
-  .post(gameController.saveCurrentTerrain);
-  .patch(setupController.updateCurrentTerrain);
+  .post(gameController.saveCurrentTerrain)
+  .patch(gameController.updateCurrentTerrain);
 
-app.route('/api/gameData/messages)
+app.route('/api/gameData/messages')
   .get(gameController.getMessages)
-  .post(gameController.saveMessages);
-  .patch(setupController.updateMessages);
+  .post(gameController.saveMessages)
+  .patch(gameController.updateMessages);
 
 /*app.route('/api/setup/player/:id')
   .get(setupController.getPlayerName)

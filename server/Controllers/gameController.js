@@ -7,7 +7,7 @@ var currentGameData = gameData.getGameData();
 exports.changePace = function(req,res){
   currentGameData.currentPace = req.body.pace;
   res.setHeader('Content-Type', 'text/plain');
-  res.send(gameData.currentPace());
+  res.send(currentGameData.currentPace());
 };
 exports.updateGame = function(req,res){
   currentGameData.groupHealth += currentGameData.currentPace.healthChange + currentGameData.currentWeather.healthChange;
@@ -49,133 +49,137 @@ exports.resetGame = function(req,res){
   currentGameData.messages= "";
 };
 exports.getGameData = function(req, res) {
+  return currentGameData;
+}
+
+exports.sendGameData = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData);
+  res.send(currentGameData);
 }
 
 exports.getPlayerStatus = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.playerStatus);
+  res.send(currentGameData.playerStatus);
 }
 
 exports.getMilesTraveled = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.milesTraveled);
+  res.send(currentGameData.milesTraveled);
 }
 
 exports.saveMilesTraveled = function(req, res) {
   currentGameData.mileTravled = req.body.milesTraveled;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.milesTraveled);
+  res.send(currentGameData.milesTraveled);
 }
 
 exports.updateMilesTraveled = function(req, res) {
   currentGameData.mileTravled = req.body.milesTraveled;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.milesTraveled);
+  res.send(currentGameData.milesTraveled);
 }
 
 exports.getGroupHealth = function(req, res) {
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'text/plain');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.groupHealth);
+  res.send(currentGameData.groupHealth);
 }
 
 exports.saveGroupHealth = function(req, res) {
   currentGameData.groupHealth = req.body.groupHealth;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.groupHealth);
+  res.send(currentGameData.groupHealth);
 }
 
 exports.updateGroupHealth = function(req, res) {
   currentGameData.groupHealth = req.body.groupHealth;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.groupHealth);
+  res.send(currentGameData.groupHealth);
 }
 
 exports.getDaysOnTrail = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.daysOnTrail);
+  res.send(currentGameData.daysOnTrail);
 }
 
 exports.saveDaysOnTrail = function(req, res) {
   currentGameData.daysOnTrail = req.body.daysOnTrail;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.daysOnTrail);
+  res.send(currentGameData.daysOnTrail);
 }
 
 exports.updateDaysOnTrail = function(req, res) {
   currentGameData.daysOnTrail = req.body.daysOnTrail;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.daysOnTrail);
+  res.send(currentGameData.daysOnTrail);
 }
 
 exports.getCurrentWeather = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.currentWeather);
+  res.send(currentGameData.currentWeather);
 }
 
 exports.saveCurrentWeather = function(req, res) {
   currentGameData.currentWeather = req.body.currentWeather;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.currentWeather);
+  res.send(currentGameData.currentWeather);
 }
 
 exports.updateCurrentWeather = function(req, res) {
   currentGameData.currentWeather = weather.getRandomWeather;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.currentWeather);
+  res.send(currentGameData.currentWeather);
 }
 
 exports.getCurrentTerrain = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.currentTerrain);
+  res.send(currentGameData.currentTerrain);
 }
 
 exports.saveCurrentTerrain = function(req, res) {
   currentGameData.currentTerrain = req.body.terrain;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.currentTerrain);
+  res.send(currentGameData.currentTerrain);
 }
 
 exports.updateCurrentTerrain = function(req, res) {
   currentGameData.currentTerrain = req.body.terrain;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.currentTerrain);
+  res.send(currentGameData.currentTerrain);
 }
 
 exports.getMessages = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.messages);
+  res.send(currentGameData.messages);
 }
 
 exports.saveMessages = function(req, res) {
   currentGameData.messages = req.body.messages;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.messages);
+  res.send(currentGameData.messages);
 }
 
 exports.updateMessages = function(req, res) {
   currentGameData.messages = req.body.messages;
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', "*");
-  res.send(gameData.messages);
+  res.send(currentGameData.messages);
 }
