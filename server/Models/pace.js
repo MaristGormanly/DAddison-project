@@ -1,7 +1,7 @@
 function pace(name,miles,healthChange){
   this.name = name;
   this.miles = miles;
-  this.healthChanges = healthChange;
+  this.healthChange = healthChange;
 }
 var paceList = [
   new pace("Steady",20,0),

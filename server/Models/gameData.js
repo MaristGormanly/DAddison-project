@@ -9,7 +9,7 @@ function gameData(){
   this.startMonth = "";
   this.mileTravled = 0;
   this.groupHealth = 100;
-  this.currentPace = "";
+  this.currentPace = pace.getPace("Resting");
   this.daysOnTrail = 0;
   this.currentWeather = weather.getRandomWeather();
   this.currentTerrain = terrain.getTerrain("Hill");
