@@ -1,4 +1,5 @@
 var gameController = require("./gameController.js");
+var gameData = require("../models/gameData.js");
 
 exports.getGameScreen  = function(req, res) {
   var gameScreen = gameController.getGameData().currentTerrain.imageUrl;
@@ -60,6 +61,11 @@ exports.updateCurrentPace  = function(req, res) {
   gameController.getGameData().currentPace = req.body.pace;
   res.setHeader('Content-Type', 'text/plain');
   res.send(gameController.getGameData().currentPace);
+}
+
+exports.getSetupScreen = function(req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.send(gameData.getSetupScreen(req.params.id));
 }
 
 /*exports.changePlayerName  = function(req, res) {

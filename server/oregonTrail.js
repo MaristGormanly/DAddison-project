@@ -91,4 +91,7 @@ app.route('/api/gameData/messages')
   .delete(setupController.deletePlayerName);
 */
 
+app.route('/api/setup/screen/:id')
+  .get(setupController.getSetupScreen);
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

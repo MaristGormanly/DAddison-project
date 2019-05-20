@@ -7,7 +7,7 @@ var currentGameData = gameData.getGameData();
 exports.changePace = function(req,res){
   currentGameData.currentPace = req.body.pace;
   res.setHeader('Content-Type', 'text/plain');
-  res.send(currentGameData.currentPace());
+  res.send(currentGameData.currentPace);
 };
 exports.updateGame = function(req,res){
   currentGameData.groupHealth += currentGameData.currentPace.healthChange + currentGameData.currentWeather.healthChange;

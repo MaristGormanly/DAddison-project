@@ -56,3 +56,27 @@ exports.healthCheck = function(){
 exports.getGameData = function(){
   return new gameData()
 }
+
+exports.getSetupScreen = function(id) {
+  if (id == 1) {
+    return startGame1;
+  }
+  if (id == 2){
+    return startGame2;
+  }
+}
+var startGame1 = "<p>Many kinds of people made the trip trip to Oregon.</p>"
+         + "<p>You may:</p>"
+         + "<ol id=\"setupQuestions1\" >"
+         + "<li id=\"bankerMenuItem\">Be a banker from Boston</li>"
+         + "<li id=\"carpenterMenuItem\">Be a carpenter from Ohio</li>"
+         + "<li id=\"farmerMenuItem\">Be a farmer from Illinois</li>"
+         + "<li id=\"differencesMenuItem\">Find out the differences between the choices</li>"
+         + "</ol>"
+         + "<div id=\"selectedOption\">What is your choice?</div>";
+
+var startGame2 = "<p>What is your wagon leader name.</p>"
+        + "<ol id=\"setupQuestions2\" >"
+        + "<li id=\"bankerMenuItem\"><input id=\"leader\" type = \"text\"></li>"
+        + "</ol>"
+        + "<button> submit </button>"
